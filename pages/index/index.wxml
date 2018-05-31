@@ -15,13 +15,12 @@
     </view>
   </picker>
 </view>
-  <view class="userinfo" style='disable'>
-    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 开始 </button>
-    <block wx:else>
-      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
-      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-    </block>
-  </view>
+<view class="btn-area">
+  <navigator url="../practice/practice?title={{typeArray[typeIndex]}}&num={{numArray[numIndex]}}&limit=20" hover-class="navigator-hover">
+  <button>开始练习</button></navigator>
+
+  <!-- <navigator url="/index/index" open-type="switchTab" hover-class="other-navigator-hover">切换 Tab</navigator> -->
+</view>
   <!-- <view class="usermotto">
     <text class="user-motto">{{motto}}</text>
   </view> -->
