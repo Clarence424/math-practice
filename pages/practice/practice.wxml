@@ -1,5 +1,5 @@
-<!--pages/practice/practice.wxml-->
-<view style="text-align:center">{{title}} </view>
-<view style="text-align:center">{{num}} </view>
-<view style="text-align:center">{{limit}} </view>
-
+<view class="button-sp-area">
+    <button class="weui-btn mini-btn" type="primary" size="mini">按钮</button>
+    <button class="weui-btn mini-btn" type="primary" size="mini">按钮</button>
+    <button class="weui-btn mini-btn" type="primary" size="mini">按钮</button>
+</view>

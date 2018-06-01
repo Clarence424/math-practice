@@ -1,0 +1,5 @@
+<!--pages/practice/practice.wxml-->
+<view style="text-align:center">{{title}} </view>
+<view style="text-align:center">{{num}} </view>
+<view style="text-align:center">{{limit}} </view>
+
