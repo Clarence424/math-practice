@@ -3,7 +3,8 @@
     "pages/index",
 
     "pages/button/button",
-    "pages/practice/practice"
+    "pages/practice/practice",
+    "pages/report/report"
   ],
   "window": {
     "navigationBarTextStyle": "black",

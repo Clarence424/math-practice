@@ -1,5 +1,45 @@
-<view class="button-sp-area">
-    <button class="weui-btn mini-btn" type="primary" size="mini">按钮</button>
-    <button class="weui-btn mini-btn" type="primary" size="mini">按钮</button>
-    <button class="weui-btn mini-btn" type="primary" size="mini">按钮</button>
+<view class="page">
+    <view class="page__hd">
+        <view class="page__title">{{title}}</view>
+    </view>
+    <view class="page__bd page__bd_spacing">
+        <view class="weui-flex">
+            <view class="weui-flex__item"><view class="weui-cell__hd" style='text-decoration: underline'>题{{dindex}}.</view></view>
+            <view class="weui-flex__item"><view class="placeholder" style="text-align:center">{{firstnums[index]}}</view></view>
+            <view class="weui-flex__item"><view class="placeholder" style='text-align:center'>{{opts[index]}}</view></view>
+            <view class="weui-flex__item"><view class="placeholder" style='text-align:center'>{{secondnums[index]}}</view></view>
+            <view class="weui-flex__item"><view class="placeholder">=</view></view>
+            <view class="weui-flex__item"><view class="placeholder" >
+                <input bindinput="updateValue" class="placeholder" maxlength="2" type="number" placeholder="请输入"value="{{answers[index]}}"/>
+            </view></view>
+        </view>
+    </view>
+    <view class="page__bd page__bd_spacing">
+        <view class="weui-flex">
+            <view class="weui-flex__item">
+              <view class="{{preflag ? '':'hidden'}}">   
+               <button bindtap='preTest' class="weui-btn mini-btn" type="primary" size="mini">上一题</button>
+              </view>
+            </view>
+            <view class="weui-flex__item">
+
+            </view>
+            <view class="weui-flex__item">
+              <view class="{{nextflag ? '':'hidden'}}">   
+               <button bindtap='nextTest' class="weui-btn mini-btn" type="primary" size="mini">下一题</button>
+              </view>
+            </view>        
+        </view>
+    </view>
+    <view class="page__bd page__bd_spacing">
+        <view class="weui-flex">
+            <view class="weui-flex__item">
+              <view class="{{nextflag ? 'hidden':''}}">   
+                <navigator open-type="redirect" url="../report/report">
+                  <button bindtap='updateCache'class="weui-btn mini-btn" type="primary" plain="true">结束</button>
+                </navigator>
+              </view>
+            </view>        
+        </view>
+    </view>
 </view>
