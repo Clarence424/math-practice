@@ -2,7 +2,6 @@
   "pages": [
     "pages/index",
 
-    "pages/button/button",
     "pages/practice/practice",
     "pages/report/report",
     "pages/numberpicker/numberpicker"

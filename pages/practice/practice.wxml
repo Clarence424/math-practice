@@ -42,4 +42,7 @@
             </view>        
         </view>
     </view>
+    <view class="weui-footer weui-footer_fixed-bottom">
+        <view class="weui-footer__text">Made by Clarence</view>
+    </view>
 </view>
