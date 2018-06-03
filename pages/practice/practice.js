@@ -11,6 +11,7 @@ Page({
     answers:[],
     corrects:[],
     formulas:[],
+    results:[],
     index:0,
     dindex:0,
     mFormula:'',
@@ -23,9 +24,21 @@ Page({
   },
   updateCache:function(){
     let arr = this.prepareDetail()
-    wx.setStorageSync({
+    wx.setStorage({
       key: "detail",
       data: arr
+    })
+    wx.setStorage({
+      key: "answers",
+      data: this.data.answers
+    })
+    wx.setStorage({
+      key: "corrects",
+      data: this.data.corrects
+    })
+    wx.setStorage({
+      key: "results",
+      data: this.data.results
     })
   },
   prepareDetail:function(){
@@ -34,7 +47,7 @@ Page({
       let str = this.data.firstnums[i] + this.data.opts[i]+this.data.secondnums[i] + '=' +this.data.corrects[i]
       arr.push(str)
     }
-    return arr.toString()
+    return arr
   },
   generateRandomInts: function () {
     let arr = []
@@ -125,23 +138,33 @@ Page({
     let oarr = this.data.opts
     oarr.push(opt)
     let carr = this.data.corrects
-    carr.push(correct)
+    carr.push(correct+"")
     let dindex = this.data.index + 1
+    let results = this.data.results
+    results.push(false)
     this.setData({
       firstnums: first,
       secondnums: second,
       corrects:carr,
       opts: oarr,
-      dindex : dindex
+      dindex : dindex,
+      results: results
     })
   },
   updateValue:function(e){
      let currentval = e.detail.value
      let arr = []
      arr = this.data.answers
+     let results = this.data.results
+     let corrects = this.data.corrects
      arr[this.data.index] = currentval
+     results[this.data.index] = false
+     if(corrects[this.data.index] == currentval){
+       results[this.data.index] = true
+     }
      this.setData({
-       answers: arr
+       answers: arr,
+       results:results
      })
   },
   nextTest:function(){

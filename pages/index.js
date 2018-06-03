@@ -8,21 +8,26 @@ Page({
                 pages: [
                   {
                     id:'button',
-                    name:'20以内加减法'
+                    name:'20以内加减法',
+                    limit:20,
+                    type:1
                   }
                   , 
+                  // {
+                  //   id: 'button',
+                  //   name: '20以内连加连减'
+                  // }, 
                   {
                     id: 'button',
-                    name: '20以内连加连减'
-                  }, 
-                  {
-                    id: 'button',
-                    name: '50以内加减法'
-                  },
-                  {
-                    id: 'button',
-                    name: '50以内连加连减'
+                    name: '50以内加减法',
+                    limit:50,
+                    type:1
                   }
+                  // ,
+                  // {
+                  //   id: 'button',
+                  //   name: '50以内连加连减'
+                  // }
                 ]
             }
         ]

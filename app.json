@@ -4,7 +4,8 @@
 
     "pages/button/button",
     "pages/practice/practice",
-    "pages/report/report"
+    "pages/report/report",
+    "pages/numberpicker/numberpicker"
   ],
   "window": {
     "navigationBarTextStyle": "black",

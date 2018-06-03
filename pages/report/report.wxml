@@ -1,16 +1,25 @@
 <view class="page">
-    <!-- <view class="page__hd">
-        <view class="page__title">WeUI</view>
-        <view class="page__desc">WeUI 是一套同微信原生视觉体验一致的基础样式库，由微信官方设计团队为微信内网页和微信小程序量身设计，令用户的使用感知更加统一。</view>
-    </view> -->
+    <view class="page__hd">
+        <view class="page__title">练习结果</view>
+    </view>
     <view class="page__bd page__bd_spacing">
         <view class="kind-list">
+              <view class="weui-flex">
+                  <view class="weui-flex__item"><view class="weui-cell__hd" style='text-decoration: underline'>题号</view></view>
+                  <view class="weui-flex__item"><view class="placeholder" style="text-align:center">正确答案</view></view>
+                  <view class="weui-flex__item"><view class="placeholder" style='text-align:center'>你的答案</view></view>
+                  <view class="weui-flex__item">结果
+                  </view>
+              </view>
             <block wx:for="{{detail}}">
-                <view class="kind-list__item">
-                    <view class="weui-flex kind-list__item-hd">
-                        <view class="weui-flex__item">{{item}}</view>
-                    </view>
-                </view>
+              <view class="weui-flex">
+                  <view class="weui-flex__item"><view class="weui-cell__hd" style='text-decoration: underline'>题{{index+1}}.</view></view>
+                  <view class="weui-flex__item"><view class="placeholder" style="text-align:center">{{item}}</view></view>
+                  <view class="weui-flex__item"><view class="placeholder" style='text-align:center'>{{answers[index]}}</view></view>
+                  <view class="weui-flex__item">
+                    <image class="icon" src="{{results[index]? '../images/icon_correct.png' : '../images/icon_wrong.png'}}"></image>
+                  </view>
+              </view>
             </block>
         </view>
     </view>

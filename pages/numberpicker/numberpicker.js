@@ -1,28 +1,39 @@
-// pages/report/report.js
+// pages/numberpicker/numberpicker.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-  
+    arrnum: [10, 20, 30, 50],
+    num:10,
+    index:0
+  },
+  bindPickerChange: function (e) {
+    console.log('picker发送选择改变，携带值为', e.detail.value)
+    this.setData({
+      index: e.detail.value
+    })
+    let url = '../practice/practice?title='
+        + this.data.title 
+        + '&num=' 
+        + this.data.arrnum[this.data.index]
+        + '&limit='
+        + this.data.limit
+    wx.navigateTo({
+      url: url,
+    })
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    let detail = wx.getStorageSync('detail')
-    let answers = wx.getStorageSync('answers')
-    let results = wx.getStorageSync('results')
     this.setData({
-      detail: detail,
-      answers: answers,
-      results: results
+      title: options.title,
+      limit: options.limit
     })
   },
-
-  
 
   /**
    * 生命周期函数--监听页面初次渲染完成

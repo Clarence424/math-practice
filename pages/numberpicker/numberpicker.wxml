@@ -1,0 +1,13 @@
+<view class="page">
+    <!-- <view class="page__hd">
+        <view class="page__title">Picker</view>
+        <view class="page__desc">选择器，这里使用小程序原生的picker。</view>
+    </view> -->
+    <view class="page__bd">
+        <view class="weui-btn-area">
+            <picker bindchange="bindPickerChange" value="{{index}}" range="{{arrnum}}">
+                <button type="default">请选择练习数量</button>
+            </picker>
+        </view>
+    </view>
+</view>
